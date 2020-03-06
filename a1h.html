@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<meta charset= "UTF-8">
+
+<style>
+    form {
+        width: 200px ;
+        border: 2px solid blue ;
+        padding: 30px ;
+        height: auto ;
+        border-radius: 25px ;
+        margin: auto ;
+        background: white;
+    }
+
+    .sec {
+        width: 300px ;
+        border: 2px solid blue ;
+        padding: 20px ;
+        height: auto ;
+        margin-top: auto ;
+        margin: auto;
+        background: lightgrey;
+        
+    }
+
+    .displayStuff {
+        display: none;
+        font-family: "Times New Roman" ,Times, serif;
+        border: 1px red;
+        border-style: dashed;
+        padding: 5px;
+    }
+  
+</style>
+
+<div class="sec">
+<form action="a1p.php" method="GET">
+ucid    <input type=text name="ucid" id="ucid" autocomplete = "off" placeholder = "Required"><br><br>
+pass    <input type=text name="pass" id="pass" autocomplete = "off" placeholder = "Required"><br><br>
+    
+    <select name="choice" id="choice">
+        
+        <option value=''> Choose</option>
+        <option value='d' > display</option>
+        <option value='t' > transact</option>
+        
+    </select><br><br>
+    
+account <input type=text name="acc"  id="acc" autocomplete = "off" placeholder = "0">  <br><br>
+    
+<input type=checkbox name="emCheck" id="emCheck">email receipt
+    
+    
+<div id="A" class="displayStuff">
+    Number for Display <input type=text name="num" id="num" autocomplete = "off" placeholder = "0"><br>
+    <input type=checkbox name="box" id="box">Check to list all accounts
+</div><br><br>
+
+<div id="B" class="displayStuff">
+    Amount for Transact <input type=text name="amount" id="amount" autocomplete = "off" placeholder = "0.00"><br>
+</div><br><br>
+        
+    <input type=submit><br>
+        
+</form>
+</div>
+
+<script>
+    
+    var ptrMenu = document.getElementById("choice") //get menu
+    var ptrA = document.getElementById("A") //get form A
+    var ptrB = document.getElementById("B") //get form B
+    
+    ptrMenu.addEventListener    ("change", F)
+
+    var X, Y
+    
+    function F ()
+    {
+        if (ptrMenu.value == 'd')
+        {
+            ptrA.style.display = "block" //make A appear
+        }
+        else
+        {
+            ptrA.style.display = "none" //make A vanish
+        }
+        
+        if (ptrMenu.value == 't')
+        {
+            ptrB.style.display = "block"
+        }
+        else
+        {
+            ptrB.style.display = "none"
+        }
+    }
+
+</script>
